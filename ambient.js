@@ -1,3 +1,4 @@
+const status = document.getElementById('status');
 if ( 'AmbientLightSensor' in window ) {
   const sensor = new AmbientLightSensor();
   sensor.onreading = () => {
