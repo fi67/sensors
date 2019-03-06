@@ -1,13 +1,12 @@
 const status = document.getElementById('status');
+let myVal = 0;
 if ( 'AmbientLightSensor' in window ) {
   const sensor = new AmbientLightSensor();
   sensor.onreading = () => {
     status.innerText = `'Current light level: ${sensor.illuminance}`;
+    myVal = Math.floor(sensor.illuminance);
     
-  document.body.style.backgroundColor = `rgb(${sensor.illuminance}, ${sensor.illuminance}, ${sensor.illuminance}`;
-
-    
-    
+  document.body.style.backgroundColor = `rgb(${myVal}, ${myVal}, ${myVal})`;
   };
   sensor.onerror = (event) => {
     status.innerText = `${event.error.name} ${event.error.message}`;
