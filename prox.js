@@ -1,3 +1,5 @@
+let status = document.getElementById('status');
+
 window.addEventListener('userproximity', function(event) {
   if (event.near) {
     // let's power off the screen
